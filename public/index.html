@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body ng-app="myApp" ng-controller="userCtrl">
+
+<div  ng-hide="qrcode" class="w3-container">
+
+    <div class="w3-cell-row">
+
+        <div class="w3-container w3-cell">
+            <h3>Grupos Whatsapp</h3>
+            <table class="w3-table w3-bordered w3-striped">
+                <tr>
+                  <th>Editar</th>
+                  <th>Descricao</th>
+                  <th>Id</th>
+                </tr>
+                <tr ng-repeat="user in users">
+                  <td>
+                    <button class="w3-btn w3-ripple" ng-click="editUser(user)">&#9998; Edit</button>
+                  </td>
+                  <td>{{ user.name }}</td>
+                  <td>{{ user.idtl }}</td>
+                </tr>
+              </table>
+              <br>
+        </div>
+      
+        <div class="w3-container w3-cell">
+            <form ng-hide="hideform">
+                <h3 ng-hide="edit">Grupo: {{name}}</h3>
+                  <label>Nome Grupo:</label>
+                  <input class="w3-input w3-border" type="text" ng-model="name" ng-disabled="!edit" placeholder="First Name">
+                <br>
+                  <label>ID:</label>
+                  <input class="w3-input w3-border" type="text" ng-model="idtl" ng-disabled="!edit" placeholder="Last Name">
+                <br>
+                  <label>ID GRUPO TELEGRAM</label>
+                  <p>coloque 100 depois do - </p>
+                  <input class="w3-input w3-border" type="text" ng-model="passw1" placeholder="grupo telegram">
+               <br>
+              <button class="w3-btn w3-green w3-ripple" ng-click="setTl(idDb,idtl,passw1)" >&#10004; Save Changes</button>
+              </form>
+              
+        </div>
+      
+      </div>
+</div>
+
+<div ng-hide="!qrcode" class="w3-container"> 
+  <p>Qrcode</p>
+  <img ng-src="{{dataqr}}" />
+</div>
+
+<script src= "api.js"></script>
+</body>
+</html>

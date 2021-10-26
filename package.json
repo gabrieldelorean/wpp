@@ -1,0 +1,20 @@
+{
+  "name": "wpp",
+  "version": "1.0.0",
+  "description": "2 formas foram criadas neste exemplo\r \tRequisição via GET para saber o status de conexão com o WhatsApp\r \thttp://127.0.0.1:3000/getconnectionstatus",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@wppconnect-team/wppconnect": "^1.9.4",
+    "express": "^4.17.1",
+    "mysql2": "^2.3.2",
+    "serve-index": "^1.9.1",
+    "sharp": "^0.29.1",
+    "telebot": "^1.4.1",
+    "ws": "^8.2.3"
+  }
+}

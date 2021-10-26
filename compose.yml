@@ -1,0 +1,26 @@
+version: '3.3'
+volumes:
+  data:
+services:
+  db:
+    image: mysql:5.7
+    command: mysqld --user=root
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./banco:/docker-entrypoint-initdb.d
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=app_development
+  web:
+    build: .
+    ports:
+      - "3001:3001"
+  app:
+    image: phpmyadmin/phpmyadmin:latest
+    links:
+      - db
+    ports:
+      - 81:80
+    environment:
+      - PMA_ARBITRARY=1
