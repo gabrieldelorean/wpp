@@ -31,7 +31,7 @@ USE wpp;
 CREATE TABLE IF NOT EXISTS `crud` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `wppid` varchar(40) NOT NULL,
-  `tlid` varchar(20) NOT NULL,
+  `tlid` varchar(40) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=latin1;
 
