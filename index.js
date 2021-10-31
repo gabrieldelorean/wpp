@@ -168,7 +168,7 @@ async function startWPP (){
           
             startWPP(); 
             atm.closeqrcode();
-          }if(statusSession == "desconnectedMobile"
+          }if(statusSession == "desconnectedMobile")
              {
                 try{ Instancia.logout();}catch(r){}
               }
