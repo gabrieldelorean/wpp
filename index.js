@@ -165,9 +165,13 @@ async function startWPP (){
     statusFind: (statusSession, session) => {
         console.log('Status Session: ', statusSession); //return isLogged || notLogged || browserClose || qrReadSuccess || qrReadFail || autocloseCalled || desconnectedMobile || deleteToken
           if(statusSession == "inChat"){
-            try{ Instancia.logout();}catch(r){}
+          
+            startWPP(); 
             atm.closeqrcode();
-          }
+          }if(statusSession == "desconnectedMobile"
+             {
+                try{ Instancia.logout();}catch(r){}
+              }
 
     
      
