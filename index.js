@@ -169,8 +169,7 @@ async function startWPP (){
              {
                 try{ 
                   Instancia.logout();
-                   startWPP();  
-                   }catch(r){}
+                  }catch(r){}
               }
 
     
