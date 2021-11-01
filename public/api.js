@@ -2,7 +2,7 @@ angular.module('myApp', []).factory('socket', [function() {
   var stack = [];
   var onmessageDefer;
   var socket = {
-      ws: new WebSocket('ws://localhost:3001/ws'),
+      ws: new WebSocket('ws://104.251.211.231:3001/ws'),
       send: function(data) {
           data = JSON.stringify(data);
           if (socket.ws.readyState == 1) {
