@@ -9,15 +9,20 @@ services:
       - "3306:3306"
     volumes:
       - ./banco:/docker-entrypoint-initdb.d
+      - ./data:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=password
       - MYSQL_DATABASE=wpp
+
   web:
     build: .
     depends_on:
       - db
     ports:
       - "3001:3001"
+    volumes:
+      - ./tokens:/tokens
+      
   app:
     image: phpmyadmin/phpmyadmin:latest
     links:

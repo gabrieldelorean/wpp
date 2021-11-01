@@ -68,7 +68,6 @@ app.get('/result', async function (req, res) {
             if(element.name) grupos.push({name:element.name,idtl:element.id._serialized});
         });
         res.send(grupos);
-        
     });
 
   
@@ -164,15 +163,13 @@ async function startWPP (){
     },  
     statusFind: (statusSession, session) => {
         console.log('Status Session: ', statusSession); //return isLogged || notLogged || browserClose || qrReadSuccess || qrReadFail || autocloseCalled || desconnectedMobile || deleteToken
-          if(statusSession == "inChat"){
-          
-            startWPP(); 
+          if(statusSession == "inChat" || statusSession == "isLogged"  ){
             atm.closeqrcode();
           }if(statusSession == "desconnectedMobile")
              {
                 try{ 
                   Instancia.logout();
-                  startWPP();  
+                   startWPP();  
                    }catch(r){}
               }
 
